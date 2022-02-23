@@ -1,0 +1,99 @@
+<html>
+
+	<link rel="stylesheet" href="teste.css">
+
+    <body>
+
+        <div class="padding">      
+
+            <input  id="letra1" >
+            <input  id="letra2" >
+            <input  id="letra3" >
+            <input  id="letra4" >
+            <input  id="letra5" >
+        <P></p>
+			<button type="button" id="botaoQ"> Q </button>
+			<button type="button" id="botaoW"> W </button>
+			<button type="button" id="botaoE"> E </button>
+            <button type="button" id="botaoR"> R </button>
+            <button type="button" id="botaoT"> T </button>
+            <button type="button" id="botaoY"> Y </button>
+            <button type="button" id="botaoU"> U </button>
+            <button type="button" id="botaoI"> I </button>
+            <button type="button" id="botaoO"> O </button>
+            <button type="button" id="botaoP"> P </button>
+			
+		<P></p>
+			<button type="button" id="botaoA"> A </button>
+			<button type="button" id="botaoS"> S </button>
+			<button type="button" id="botaoD"> D </button>
+            <button type="button" id="botaoF"> F </button>
+            <button type="button" id="botaoG"> G </button>
+            <button type="button" id="botaoH"> H </button>
+            <button type="button" id="botaoJ"> J </button>
+            <button type="button" id="botaoK"> K </button>
+            <button type="button" id="botaoL"> L </button>
+            <button type="button" id="botaoÇ"> Ç </button>
+		<P></p>
+			<button type="button" id="botaoZ"> Z </button>
+			<button type="button" id="botaoX"> X </button>
+			<button type="button" id="botaoC"> C </button>
+            <button type="button" id="botaoV"> V </button>
+            <button type="button" id="botaoB"> B </button>
+            <button type="button" id="botaoN"> N </button>
+            <button type="button" id="botaoM"> M </button>
+		<P></p>       
+            <button type="button" id="botao">Conferir</button>
+            <button type="button" id="botaoapagar">Apagar</button>
+
+        </div>    
+
+
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script type="text/javascript">
+        
+        let posicao = 0;
+        let palavra = 'SORTE';
+        let letras = [botaoQ,botaoW,botaoE,botaoR,botaoT,botaoY,botaoU,botaoI,botaoO,botaoP,botaoA,botaoS,botaoD,botaoF,botaoG,botaoH,botaoJ,botaoK,botaoL,botaoÇ,botaoZ,botaoX,botaoC,botaoV,botaoB,botaoN,botaoM];
+        let letrasString = ["botaoQ","botaoW","botaoE","botaoR","botaoT","botaoY","botaoU","botaoI","botaoO","botaoP","botaoA","botaoS","botaoD","botaoF","botaoG","botaoH","botaoJ","botaoK","botaoL","botaoÇ","botaoZ","botaoX","botaoC","botaoV","botaoB","botaoN","botaoM"];
+        let letra = [letra1,letra2,letra3,letra4,letra5];
+
+
+        for(let i=0; i<27;i++){ 		
+		letras[i].onclick= digito.bind(this,i);	
+	    }  
+
+        function digito (x){
+            letra[posicao].value = letrasString[x].substring(6,5) ;	  
+            posicao++;	
+        }; 
+            
+        function validar(){
+            if (posicao = 4) {
+
+                if (palavra.substring(0,1) == letra1.value ){
+                    alert("certo");
+                    letra1.style.backgroundColor = "green";
+                }
+                else{               
+                    alert("errado"); 
+                }   
+            }  
+            else{alert("INSIRA TODAS AS 5 LETRAS");}      
+        }
+
+        function apagar(){
+            letra[posicao-1].value ="  ";
+            posicao --;
+        }
+
+        botao.onclick = validar;
+        botaoapagar.onclick = apagar;
+
+    </script>
+
+</html>
