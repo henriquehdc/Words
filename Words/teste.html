@@ -5,15 +5,17 @@
 
 <body>
 
-     <div class="padding">      
- 
-         <div class="box" id="letra1">  </div>
-            
+    <p style="font-size:100px; text-align: center;margin-bottom: 10px;">WORDS</p>
+
+     <div class="blocos">     
+
+        <div>
+             <input id="letra1">            
              <input  id="letra2" >
              <input  id="letra3" >
              <input  id="letra4" >
-            <input   id="letra5" >
-        
+            <input   id="letra5" >       
+        </div>
 
         <div>                
             <input  id="letra6" >
@@ -48,44 +50,44 @@
         </div>
   
         
+        <div class="teclado">
+            <P></p>
+                <button type="button" id="botaoQ"> Q </button>
+                <button type="button" id="botaoW"> W </button>
+                <button type="button" id="botaoE"> E </button>
+                <button type="button" id="botaoR"> R </button>
+                <button type="button" id="botaoT"> T </button>
+                <button type="button" id="botaoY"> Y </button>
+                <button type="button" id="botaoU"> U </button>
+                <button type="button" id="botaoI"> I </button>
+                <button type="button" id="botaoO"> O </button>
+                <button type="button" id="botaoP"> P </button>
 
-        <P></p>
-			<button type="button" id="botaoQ"> Q </button>
-			<button type="button" id="botaoW"> W </button>
-			<button type="button" id="botaoE"> E </button>
-            <button type="button" id="botaoR"> R </button>
-            <button type="button" id="botaoT"> T </button>
-            <button type="button" id="botaoY"> Y </button>
-            <button type="button" id="botaoU"> U </button>
-            <button type="button" id="botaoI"> I </button>
-            <button type="button" id="botaoO"> O </button>
-            <button type="button" id="botaoP"> P </button>
 
-
-		<P></p>
-			<button type="button" id="botaoA"> A </button>
-			<button type="button" id="botaoS"> S </button>
-			<button type="button" id="botaoD"> D </button>
-            <button type="button" id="botaoF"> F </button>
-            <button type="button" id="botaoG"> G </button>
-            <button type="button" id="botaoH"> H </button>
-            <button type="button" id="botaoJ"> J </button>
-            <button type="button" id="botaoK"> K </button>
-            <button type="button" id="botaoL"> L </button>
-            <button type="button" id="botaoÇ"> Ç </button>
-		<P></p>
-			<button type="button" id="botaoZ"> Z </button>
-			<button type="button" id="botaoX"> X </button>
-			<button type="button" id="botaoC"> C </button>
-            <button type="button" id="botaoV"> V </button>
-            <button type="button" id="botaoB"> B </button>
-            <button type="button" id="botaoN"> N </button>
-            <button type="button" id="botaoM"> M </button>
-		<P></p>       
-            <button type="button" id="botao">Conferir</button>
-            <button type="button" id="botaoapagar">Apagar</button>
-
-        </div>    
+            <P></p>
+                <button type="button" id="botaoA"> A </button>
+                <button type="button" id="botaoS"> S </button>
+                <button type="button" id="botaoD"> D </button>
+                <button type="button" id="botaoF"> F </button>
+                <button type="button" id="botaoG"> G </button>
+                <button type="button" id="botaoH"> H </button>
+                <button type="button" id="botaoJ"> J </button>
+                <button type="button" id="botaoK"> K </button>
+                <button type="button" id="botaoL"> L </button>
+                <button type="button" id="botaoÇ"> Ç </button>
+            <P></p>
+                <button type="button" id="botaoZ"> Z </button>
+                <button type="button" id="botaoX"> X </button>
+                <button type="button" id="botaoC"> C </button>
+                <button type="button" id="botaoV"> V </button>
+                <button type="button" id="botaoB"> B </button>
+                <button type="button" id="botaoN"> N </button>
+                <button type="button" id="botaoM"> M </button>
+            <P></p>       
+                <button type="button" id="botao" style ="width: 80px; height: 40px">Conferir</button>
+                <button type="button" id="botaoapagar" style ="width: 80px; height: 40px">Apagar</button>
+         </div>
+    </div>    
 
 
     </body>
@@ -94,6 +96,7 @@
 
     <script type="text/javascript">
         
+
         let posicao = 0;
         let palavra = 'SORTE';
         let letras = [botaoQ,botaoW,botaoE,botaoR,botaoT,botaoY,botaoU,botaoI,botaoO,botaoP,botaoA,botaoS,botaoD,botaoF,botaoG,botaoH,botaoJ,botaoK,botaoL,botaoÇ,botaoZ,botaoX,botaoC,botaoV,botaoB,botaoN,botaoM];
@@ -111,21 +114,24 @@
         }; 
             
         function validar(){
-            if (posicao = 4) {
+            if (posicao == 5) {
 
                 if (palavra.substring(0,1) == letra1.value ){
                     alert("certo");
-                    letra1.style.backgroundColor = "green";
+                    letra1.style.backgroundColor = "#63FA41";
                 }
                 else{               
                     alert("errado"); 
                 }   
             }  
-            else{alert("INSIRA TODAS AS 5 LETRAS");}      
+            else{alert("INSIRA TODAS AS 5 LETRAS");
+            }     
+
+           posicao++;
         }
 
         function apagar(){
-            letra[posicao-1].value ="  ";
+            letra[posicao-1].value =" ";
             posicao --;
         }
 
