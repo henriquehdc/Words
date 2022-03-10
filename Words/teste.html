@@ -10,7 +10,7 @@
      <div class="blocos">     
 
         <div>
-             <input id="letra1">            
+             <input  id="letra1">            
              <input  id="letra2" >
              <input  id="letra3" >
              <input  id="letra4" >
@@ -47,6 +47,14 @@
             <input  id="letra23" >
             <input  id="letra24" >
             <input  id="letra25" >
+        </div>
+
+        <div>
+            <input  id="letra26" >
+            <input  id="letra27" >
+            <input  id="letra28" >
+            <input  id="letra29" >
+            <input  id="letra30" >
         </div>
   
         
@@ -96,12 +104,12 @@
 
     <script type="text/javascript">
         
-
+        
         let posicao = 0;
-        let palavra = 'SORTE';
+        let palavra = 'BARCO';
         let letras = [botaoQ,botaoW,botaoE,botaoR,botaoT,botaoY,botaoU,botaoI,botaoO,botaoP,botaoA,botaoS,botaoD,botaoF,botaoG,botaoH,botaoJ,botaoK,botaoL,botaoÇ,botaoZ,botaoX,botaoC,botaoV,botaoB,botaoN,botaoM];
         let letrasString = ["botaoQ","botaoW","botaoE","botaoR","botaoT","botaoY","botaoU","botaoI","botaoO","botaoP","botaoA","botaoS","botaoD","botaoF","botaoG","botaoH","botaoJ","botaoK","botaoL","botaoÇ","botaoZ","botaoX","botaoC","botaoV","botaoB","botaoN","botaoM"];
-        let letra = [letra1,letra2,letra3,letra4,letra5];
+        let letra = [letra1,letra2,letra3,letra4,letra5,letra6,letra7,letra8,letra9,letra10,letra11,letra12,letra13,letra14,letra15,letra16,letra17,letra18,letra19,letra20,letra21,letra22,letra23,letra24,letra25];
 
 
         for(let i=0; i<27;i++){ 		
@@ -112,22 +120,29 @@
             letra[posicao].value = letrasString[x].substring(6,5) ;	  
             posicao++;	
         }; 
-            
+        
+        let linha=0;
         function validar(){
-            if (posicao == 5) {
-
-                if (palavra.substring(0,1) == letra1.value ){
-                    alert("certo");
-                    letra1.style.backgroundColor = "#63FA41";
+        let contador =0;      
+            if ( (posicao % 5 ) == 0) {
+                for (let i = linha;i<(linha+5);i++){ 
+                let cont = 0;               
+                   if(letra[i].value == palavra.charAt(contador)){
+                    letra[i].style.backgroundColor = "#63FA41";
+                   }else { 
+                       
+                        for (let j =0;j<5;j++){
+                            if (letra[i].value == palavra.charAt(j)){
+                                letra[i].style.backgroundColor = "#e0902d";
+                            }else{cont ++;}
+                        }    
+                   } 
+                contador++;   
+                if (cont == 5){ letra[i].style.backgroundColor =  "#786c6b"}                               
                 }
-                else{               
-                    alert("errado"); 
-                }   
-            }  
-            else{alert("INSIRA TODAS AS 5 LETRAS");
-            }     
-
-           posicao++;
+                linha = linha + 5 ; 
+            }
+                else{alert("INSIRA TODAS AS 5 LETRAS");}      
         }
 
         function apagar(){
@@ -141,3 +156,4 @@
     </script>
 
 </html>
+
